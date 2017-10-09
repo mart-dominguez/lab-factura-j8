@@ -10,5 +10,10 @@ package ar.edu.utn.frsf.ofa.java8.lab07.util;
  * @author mdominguez
  */
 public class FileManager {
+    private String archivo;
+    private String directorio;
     
+    public void guardarLineaCSV(Formateable objeto){
+        
+    }
 }

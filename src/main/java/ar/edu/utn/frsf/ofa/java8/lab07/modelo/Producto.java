@@ -100,7 +100,7 @@ public class Producto implements Formateable{
 
     @Override
     public String asCvs() {
-        return this.id+","this.descripcion+","+this.precio+","+this.stock+System.getProperty(descripcion);
+        return this.id+","+this.descripcion+","+this.precio+","+this.stock+System.getProperty("a");
     }
 
     
