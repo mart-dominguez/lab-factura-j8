@@ -99,8 +99,16 @@ public class Producto implements Formateable{
     }
 
     @Override
-    public String asCvs() {
-        return this.id+","+this.descripcion+","+this.precio+","+this.stock+System.getProperty("a");
+    public String asCvsRow() {
+        return this.id+","+this.descripcion+","+this.precio+","+this.stock+System.getProperty("line.separator");
+    }
+
+    @Override
+    public void loadFromCsvRow(String[] row) {
+        this.id = Integer.parseInt(row[0]);
+        this.descripcion = row[1];
+        this.precio = Double.parseDouble(row[2]);        
+        this.stock = Integer.parseInt(row[3]);
     }
 
     

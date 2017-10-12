@@ -10,5 +10,11 @@ package ar.edu.utn.frsf.ofa.java8.lab07.util;
  * @author mdominguez
  */
 public interface Formateable {
-    public String asCvs();
+    /**
+     * retorna una instancia de un objeto como una fila de archivos CVS
+     * @return 
+     */
+    public String asCvsRow();
+    
+    public void loadFromCsvRow(String[] row);
 }

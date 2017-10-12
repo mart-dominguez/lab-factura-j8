@@ -6,6 +6,7 @@
 package ar.edu.utn.frsf.ofa.java8.lab07.dao;
 
 import ar.edu.utn.frsf.ofa.java8.lab07.modelo.Producto;
+import ar.edu.utn.frsf.ofa.java8.lab07.util.FileManager;
 import ar.edu.utn.frsf.ofa.java8.lab07.util.Formateable;
 
 /**
@@ -14,9 +15,16 @@ import ar.edu.utn.frsf.ofa.java8.lab07.util.Formateable;
  */
 public class ProductoDaoFile implements ProductoDao {
 
+    private FileManager fileManager;
+    
+    public ProductoDaoFile(){
+        fileManager = new FileManager("productos.csv");
+    }
+    
     @Override
     public Producto crear(Producto p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        fileManager.insertarLineaCSV(p);
+        return p;
     }
 
     @Override
@@ -26,7 +34,10 @@ public class ProductoDaoFile implements ProductoDao {
 
     @Override
     public Producto buscarPorId(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String[] data = fileManager.retornarLineaCSV(id);
+        Producto buscado = new Producto();
+        buscado.loadFromCsvRow(data);
+        return buscado;
     }
 
     @Override
