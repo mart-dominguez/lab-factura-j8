@@ -6,6 +6,7 @@
 package ar.edu.utn.frsf.ofa.java8.lab07.dao;
 
 import ar.edu.utn.frsf.ofa.java8.lab07.modelo.Producto;
+import java.util.List;
 
 /**
  *
@@ -17,5 +18,6 @@ public interface ProductoDao {
     public Producto actualizar(Producto p);
     public Producto buscarPorId(Integer id);
     public Producto borrar(Integer id);
+    public List<Producto> listarTodos();
     
 }

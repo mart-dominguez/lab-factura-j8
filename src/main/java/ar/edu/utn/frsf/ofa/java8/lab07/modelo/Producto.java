@@ -22,7 +22,7 @@ public class Producto implements Formateable{
     private Double precio;
 
     public Producto() {
-        this.id = _GENERADOR_ID++;
+      //  this.id = _GENERADOR_ID++;
     }
 
     public Producto(Integer id, String descripcion, Integer stock, Double precio) {
@@ -33,7 +33,7 @@ public class Producto implements Formateable{
     }
     
     public Producto(String descripcion, Integer stock, Double precio) {
-        this(_GENERADOR_ID++,descripcion,stock,precio);
+        this(null,descripcion,stock,precio);
     }   
 
     public Integer getId() {

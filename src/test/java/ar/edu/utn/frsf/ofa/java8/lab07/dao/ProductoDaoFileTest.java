@@ -22,7 +22,7 @@ public class ProductoDaoFileTest {
     
     @Before
     public void setUp() {
-        productoDao = new ProductoDaoFile();
+        productoDao = new ProductoDaoSql();
     }
     
     @After
@@ -48,9 +48,11 @@ public class ProductoDaoFileTest {
     public void testBuscarPorId() {
         Producto prd2 = new Producto("producto 2", 100, 99.90);
         Producto resultado = productoDao.crear(prd2);
-        assertEquals(resultado, prd2);
-        Producto resultado2 = productoDao.buscarPorId(prd2.getId());
-        assertEquals(resultado2, prd2);
+        assertEquals(resultado.getDescripcion(), prd2.getDescripcion());
+        assertEquals(resultado.getPrecio(), prd2.getPrecio());
+        assertEquals(resultado.getStock(), prd2.getStock());
+        Producto resultado2 = productoDao.buscarPorId(resultado.getId());
+        assertEquals(resultado2, resultado);
     }
 
     
