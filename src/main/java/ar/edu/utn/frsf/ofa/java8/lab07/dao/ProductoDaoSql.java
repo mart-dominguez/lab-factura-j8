@@ -6,6 +6,7 @@
 package ar.edu.utn.frsf.ofa.java8.lab07.dao;
 
 import ar.edu.utn.frsf.ofa.java8.lab07.modelo.Producto;
+import ar.edu.utn.frsf.ofa.java8.lab07.util.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
